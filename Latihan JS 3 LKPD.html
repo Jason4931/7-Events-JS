@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>7 Events (Jason4931 Ver)</title>
+    </head>
+    <body onload="inload()">
+        <script>
+            function inload() {
+                document.getElementById("outload").innerHTML = "Loaded!";
+            }
+            function inclick() {
+                if(document.getElementById("outclick").innerHTML == "") {
+                    document.getElementById("outclick").innerHTML = "Clicked!";
+                } else {
+                    document.getElementById("outclick").innerHTML = "";
+                }
+            }
+            function inchange() {
+                if(document.getElementById("inchange").value != "") {
+                    document.getElementById("outchange").innerHTML = "Changed! : "+document.getElementById("inchange").value;
+                } else {
+                    document.getElementById("outchange").innerHTML = "Changed!";
+                }
+            }
+            function inmouseover() {
+                document.getElementById("outmouseoverout").innerHTML = "Hovered!";
+            }
+            function inmouseout() {
+                document.getElementById("outmouseoverout").innerHTML = "";   
+            }
+            function infocus() {
+                if(document.getElementById("infocusblur").value != "") {
+                    document.getElementById("outfocusblur").innerHTML = "Focused! : "+document.getElementById("infocusblur").value;
+                } else {
+                    document.getElementById("outfocusblur").innerHTML = "Focused!";
+                }
+            }
+            function inblur() {
+                if(document.getElementById("infocusblur").value != "") {
+                    document.getElementById("outfocusblur").innerHTML = "Blurred! : "+document.getElementById("infocusblur").value; 
+                } else {
+                    document.getElementById("outfocusblur").innerHTML = "Blurred!";
+                }
+            }
+        </script>
+        <p id="outload"></p>
+        <button onclick="inclick()">onclick</button>
+        <p id="outclick"></p>
+        <input type="text" placeholder="onchange" onchange="inchange()" id="inchange">
+        <p id="outchange"></p>
+        <input type="text" placeholder="onfocusblur" onfocus="infocus()" onblur="inblur()" id="infocusblur">
+        <p id="outfocusblur"></p>
+        <span onmouseover="inmouseover()" onmouseout="inmouseout()"><button>onmouseoverout</button></span>
+        <p id="outmouseoverout"></p>
+    </body>
+</html>
